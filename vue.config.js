@@ -6,8 +6,8 @@ module.exports = {
         data: `
           @import "@/assets/scss/_variables.scss";
           @import "@/assets/scss/_responsive.scss";
-        `
-      }
-    }
-  }
+        `,
+      },
+    },
+  },
 }

@@ -42,11 +42,11 @@
     right: 12px;
     bottom: 8px;
     font-size: 14px;
-    font-family: "Font Awesome 5 Pro";
+    font-family: 'fontawesome';
     font-weight: 400;
-    content: "\f0d7";
+    content: '\f0d7';
     color: $--color-grey-dark;
-    transition: color .2s;
+    transition: color 0.2s;
   }
   &:hover {
     &:after {
@@ -60,7 +60,7 @@
     &:after {
       content: '\F069';
       font-size: 7px;
-      font-family: "Font Awesome 5 Pro";
+      font-family: 'fontawesome';
       font-weight: 400;
       margin-left: 1px;
       position: relative;

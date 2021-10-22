@@ -13,33 +13,33 @@ export default {
   props: {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     subtitle: {
-      type: String
+      type: String,
     },
     tag: {
       type: String,
-      default: 'h2'
-    }
-  }
+      default: 'h2',
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-  .app-title {
-    &__title {
-      font-size: 24px;
-      font-family: $--font-serif;
-      margin-bottom: 16px;
-      font-weight: initial;
-    }
-    &__subtitle {
-      font-weight: initial;
-      font-size: 12px;
-      font-family: $--font-sans;
-      display: block;
-      margin-bottom: 8px;
-    }
+.app-title {
+  &__title {
+    font-size: 24px;
+    font-family: $--font-serif;
+    margin-bottom: 16px;
+    font-weight: initial;
   }
+  &__subtitle {
+    font-weight: initial;
+    font-size: 12px;
+    font-family: $--font-sans;
+    display: block;
+    margin-bottom: 8px;
+  }
+}
 </style>

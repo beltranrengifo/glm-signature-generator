@@ -12,20 +12,20 @@ import Clipboard from 'clipboard'
 
 export default {
   name: 'CopyButton',
-  data () {
+  data() {
     return {
       clipboardInstance: null,
       isCopied: false,
-      text: 'copiar'
+      text: 'copiar',
     }
   },
   props: {
     elementToCopy: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
-  mounted () {
+  mounted() {
     this.clipboardInstance = new Clipboard('.copy__button')
     this.clipboardInstance.on('success', e => {
       this.text = 'copiado'
@@ -36,7 +36,7 @@ export default {
         e.clearSelection()
       }, 1500)
     })
-  }
+  },
 }
 </script>
 
