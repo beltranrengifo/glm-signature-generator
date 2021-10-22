@@ -11,7 +11,7 @@
         <tr>
           <td v-if="person.image" style="width: 170px">
             <img
-              :src="`${STATIC_IMAGES_URL}/grupo-la-musa-img-izq-firma.jpg`"
+              :src="getLeftImage"
               width="170"
               height="163"
               alt="Grupo La Musa"
@@ -135,7 +135,7 @@
             <br />
             <a href="https://grupolamusa.com" style="text-decoration: none">
               <img
-                :src="`${STATIC_IMAGES_URL}/grupo-la-musa-logo-firma.jpg`"
+                :src="getLogoImage"
                 alt="Logo Grupo La Musa"
                 width="175"
                 height="46"
@@ -214,7 +214,7 @@
 </template>
 
 <script>
-import { STATIC_IMAGES_URL } from '@/config'
+import { STATIC_IMAGES_URL, IMAGES } from '@/config'
 
 export default {
   name: 'SignaturePrerender',
@@ -229,7 +229,32 @@ export default {
   data() {
     return {
       STATIC_IMAGES_URL,
+      IMAGES,
     }
+  },
+
+  computed: {
+    getLeftImage() {
+      return `${STATIC_IMAGES_URL}/${
+        this.person.useAltLogo
+          ? this.IMAGES.ALTERNATIVE_LEFT_IMAGE
+          : this.IMAGES.DEFAULT_LEFT_IMAGE
+      }`
+    },
+
+    getLogoImage() {
+      const images = {
+        default: this.IMAGES.DEFAULT_LOGO,
+        alt: this.IMAGES.ALTERNATIVE_LOGO,
+      }
+
+      const image = this.person.useAltLogo ? 'alt' : 'default'
+      try {
+        return require(`@/assets/images/${images[image]}`)
+      } catch {
+        return require(`@/assets/images/${this.DEFAULT_LOGO}`)
+      }
+    },
   },
 }
 </script>

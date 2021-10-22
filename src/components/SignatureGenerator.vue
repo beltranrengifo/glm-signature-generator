@@ -84,12 +84,17 @@
       <label class="label" for="image">Ocultar imagen</label>
       <toggle-button @change="signature.image = !signature.image" />
     </div>
+    <div class="form__item">
+      <label class="label" for="image">Usar logo del 25 Aniversario</label>
+      <toggle-button @change="signature.useAltLogo = !signature.useAltLogo" />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'SignatureGenerator',
+
   data() {
     return {
       signature: {
@@ -103,6 +108,7 @@ export default {
         company: '',
         other: '',
         image: true,
+        useAltLogo: false,
       },
       companies: [
         'BERODE RESTAURACIÓN, S.L.',
@@ -116,6 +122,7 @@ export default {
       ],
     }
   },
+
   watch: {
     signature: {
       deep: true,

@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import { IMAGES } from '@/config'
 import SignatureGenerator from '@/components/SignatureGenerator.vue'
 import TitleComponent from '@/components/TitleComponent.vue'
 import Logo from '@/components/Logo.vue'
@@ -43,6 +44,7 @@ import instructions from '@/assets/js/instructions'
 
 export default {
   name: 'app',
+
   components: {
     SignatureGenerator,
     TitleComponent,
@@ -51,19 +53,23 @@ export default {
     CopyButton,
     InstructionsBlock,
   },
+
   data() {
     return {
       subtitle: 'Grupo La Musa',
       person: {},
       copyButtonText: 'Copiar',
       instructions: instructions,
+      IMAGES,
     }
   },
+
   computed: {
     logo() {
-      return require('@/assets/images/logo-grupo-musa-364_v2-1.png')
+      return require(`@/assets/images/${this.IMAGES.DEFAULT_LOGO}`)
     },
   },
+
   methods: {
     updateSignature(val) {
       this.person = val
