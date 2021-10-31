@@ -118,6 +118,7 @@ export default {
         'MUSA MALASAÑA, S.L.',
         'PALEO ESPELTO, S.L.',
         'SPIEDO GRILL, S.L.',
+        'BRASAS CON PALA S.L.',
         'Otra',
       ],
     }
