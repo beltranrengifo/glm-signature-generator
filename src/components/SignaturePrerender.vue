@@ -19,7 +19,7 @@
             />
           </td>
           <td style="width: 10px"></td>
-          <td style="vertical-align: top">
+          <td :style="getContentColumnStyles">
             <p
               style="
                 -webkit-margin-before: 0;
@@ -133,7 +133,11 @@
               />
             </a>
             <br />
-            <a href="https://grupolamusa.com" style="text-decoration: none">
+            <a
+              v-if="!exceptionallyHideLogoImageFor25Anniversary"
+              href="https://grupolamusa.com"
+              style="text-decoration: none"
+            >
               <img
                 :src="getLogoImage"
                 alt="Logo Grupo La Musa"
@@ -234,6 +238,10 @@ export default {
   },
 
   computed: {
+    exceptionallyHideLogoImageFor25Anniversary() {
+      return this.person.useAltLogo
+    },
+
     getLeftImage() {
       return `${STATIC_IMAGES_URL}/${
         this.person.useAltLogo
@@ -254,6 +262,17 @@ export default {
       } catch {
         return require(`@/assets/images/${this.DEFAULT_LOGO}`)
       }
+    },
+
+    getContentColumnStyles() {
+      if (this.exceptionallyHideLogoImageFor25Anniversary) {
+        return `
+          vertical-align: middle;
+        `
+      }
+      return `
+          vertical-align: top;
+        `
     },
   },
 }

@@ -5,5 +5,5 @@ export const IMAGES = {
   DEFAULT_LOGO: 'logo-grupo-musa-364_v2-1.png',
   ALTERNATIVE_LOGO: 'logo-grupo-musa-364_v25Aniv.png',
   DEFAULT_LEFT_IMAGE: 'grupo-la-musa-img-izq-firma.jpg',
-  ALTERNATIVE_LEFT_IMAGE: 'grupo-la-musa-img-izq-firma-25Aniv.jpg',
+  ALTERNATIVE_LEFT_IMAGE: 'grupo-la-musa-img-izq-firma-25Aniv_v2.jpeg',
 }
